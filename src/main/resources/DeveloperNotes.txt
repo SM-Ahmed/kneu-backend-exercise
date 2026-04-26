@@ -1,6 +1,8 @@
 Overall Approach:
 1. Focus on making a completed flow with emphasis on getting DTO/database structures right so that it can be easily extended in the future.
 2. Test Driven Development: after defining the data structures, I write an end to end test which covers the main functionalities I need to implement. Once code is complete, this test passes.
+3. Copilot used to reduce manual work (e.g. writing transformers, boilerplate code, tests etc.). I just defined the data structures, data architecture and test scenarios to prompt Copilot to work. Afterwards, I adjusted output appropriately.
+4. Copilot usage was sparing (due to being on free plan).
 
 Assumptions:
 1. One prescription can have multiple medicines (or this may happen in the future)
