@@ -1,5 +1,7 @@
-package com.kneu.medications;
+package com.kneu.medications.integration;
 
+import com.kneu.medications.jpa.entity.MedicationEntity;
+import com.kneu.medications.jpa.repository.MedicationRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -14,7 +16,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 @ActiveProfiles("test")
-class MedicationControllerTest {
+class MedicationEndToEndTest {
 
     @Autowired
     private MockMvc mockMvc;
@@ -24,8 +26,8 @@ class MedicationControllerTest {
 
     @Test
     void getAllMedications() throws Exception {
-        medicationRepository.save(new Medication("Aspirin", "100mg"));
-        medicationRepository.save(new Medication("Metformin", "500mg"));
+        medicationRepository.save(MedicationEntity.builder().name("Aspirin").dosage("100mg").build());
+        medicationRepository.save(MedicationEntity.builder().name("Metformin").dosage("500mg").build());
 
         mockMvc.perform(get("/medications"))
             .andExpect(status().isOk())

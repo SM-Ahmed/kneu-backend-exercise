@@ -1,0 +1,11 @@
+Assumptions:
+1. see comments in sql script
+
+
+Improvement points:
+
+1. OpenAPI schema: formalise external API schema, generate external pojo classes from it, have separate dtos for external api requests and internal dtos, easier validations
+2. Database: implement proper changelog handling (e.g. Liquibase), transactions etc.
+3. Logging: implement proper logging (e.g. SLF4J), log levels, log formatting, log rotation etc.
+4. Junit: add 100% junit test coverage on all lines of code + branches
+5. Modularity: separate dao module handling jpa features so core module doesnt bother with entity objects at all.
