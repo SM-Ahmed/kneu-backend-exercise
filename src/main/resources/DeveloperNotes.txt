@@ -1,6 +1,14 @@
-Assumptions:
-1. see comments in sql script
+Overall Approach:
+1. Focus on making a completed flow with emphasis on getting DTO/database structures right so that it can be easily extended in the future.
+2. Test Driven Development: after defining the data structures, I write an end to end test which covers the main functionalities I need to implement. Once code is complete, this test passes.
 
+Assumptions:
+1. One prescription can have multiple medicines (or this may happen in the future)
+2. Prescription administration time is an optional field. Assume that it is daily medication, so I do not need to specify frequency etc (e.g. via cron expression)
+
+Trade-offs (due to time constraints):
+1. Many features left unimplemented (see improvements below)
+2. Validation and error handling is very basic. Ideally, I would use separate validator classes and aspects
 
 Improvement points:
 
